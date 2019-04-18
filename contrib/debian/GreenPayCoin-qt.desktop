@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=GreenPayCoin
+Comment=GreenPayCoin P2P Cryptocurrency
+Comment[fr]=GreenPayCoin, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=GreenPayCoin, eşten eşe kriptografik sanal para birimi
+Exec=GreenPayCoin-qt %u
+Terminal=false
+Type=Application
+Icon=GreenPayCoin128
+MimeType=x-scheme-handler/GreenPayCoin;
+Categories=Office;Finance;

@@ -1,0 +1,26 @@
+[Unit]
+Description=GreenPayCoin's distributed currency daemon
+After=network.target
+
+[Service]
+User=GreenPayCoin
+Group=GreenPayCoin
+
+Type=forking
+PIDFile=/var/lib/GreenPayCoind/GreenPayCoind.pid
+
+ExecStart=/usr/bin/GreenPayCoind -daemon -pid=/var/lib/GreenPayCoind/GreenPayCoind.pid \
+          -conf=/etc/GreenPayCoin/GreenPayCoin.conf -datadir=/var/lib/GreenPayCoind
+
+ExecStop=-/usr/bin/GreenPayCoin-cli -conf=/etc/GreenPayCoin/GreenPayCoin.conf \
+         -datadir=/var/lib/GreenPayCoind stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

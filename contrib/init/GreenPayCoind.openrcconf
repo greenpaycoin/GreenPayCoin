@@ -1,0 +1,26 @@
+# /etc/conf.d/GreenPayCoind: config file for /etc/init.d/GreenPayCoind
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/GreenPayCoin/GreenPayCoin.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/GreenPayCoind"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/GreenPayCoind.pid"
+
+# Where to write GreenPayCoind data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/GreenPayCoind"
+
+# User and group to own GreenPayCoind process
+#BITCOIND_USER="GreenPayCoin"
+#BITCOIND_GROUP="GreenPayCoin"
+
+# Path to GreenPayCoind executable
+#BITCOIND_BIN="/usr/bin/GreenPayCoind"
+
+# Nice value to run GreenPayCoind under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""

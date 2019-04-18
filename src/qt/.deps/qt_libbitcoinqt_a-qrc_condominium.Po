@@ -1,0 +1,1 @@
+qt/qt_libbitcoinqt_a-qrc_GreenPayCoin.o: qt/qrc_GreenPayCoin.cpp
