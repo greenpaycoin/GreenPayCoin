@@ -59,10 +59,10 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x000008505decd70d3aab4eea45bf1c12a722dd66b796df13e03424791e9fa565"));
+    (0, uint256("0x00000968681f960027b9549f234431a7c849ad5bff52a40be7c547742ac52263"));
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1555314413, // * UNIX timestamp of last checkpoint block
+    1555956789, // * UNIX timestamp of last checkpoint block
     0,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     1440        // * estimated number of transactions per day after checkpoint
@@ -158,26 +158,42 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1555314413;
+        genesis.nTime = 1555956789;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 5013306;
+        genesis.nNonce = 5638744;
 
-
+        hashGenesisBlock = uint256("0x00000968681f960027b9549f234431a7c849ad5bff52a40be7c547742ac52263");
+        if (false && genesis.GetHash() != hashGenesisBlock)
+        {
+            printf("recalculating params for mainnet.\n");
+            printf("old mainnet genesis nonce: %s\n");
+            std::string nNonce = "nNonce is " + std::to_string(genesis.nNonce);
+            std::cout << nNonce << '\n';
+            printf("old mainnet genesis hash:  %s\n", hashGenesisBlock.ToString().c_str());
+            // deliberately empty for loop finds nonce value.
+            for(genesis.nNonce == 0; genesis.GetHash() > bnProofOfWorkLimit; genesis.nNonce++){ }
+            printf("new mainnet genesis merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
+            printf("new mainnet genesis nonce: %s\n");
+            std::string nNoncenew = "nNonce is " + std::to_string(genesis.nNonce);
+            std::cout << nNoncenew << '\n';
+            printf("new mainnet genesis hash: %s\n", genesis.GetHash().ToString().c_str());
+        }
 
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000008505decd70d3aab4eea45bf1c12a722dd66b796df13e03424791e9fa565"));
+        assert(hashGenesisBlock == uint256("0x00000968681f960027b9549f234431a7c849ad5bff52a40be7c547742ac52263"));
         assert(genesis.hashMerkleRoot == uint256("0x7fce719722b10a52cfa853e8e5ac312a448edc2c575448a41d574facd69b2373"));
 
      // vSeeds.push_back(CDNSSeedData("seed1.sndcoin.org", "seed1.sndcoin.org"));             // seed1
           //vSeeds.push_back(CDNSSeedData("seed2.sndcoin.org", "seed2.sndcoin.org"));             // seed2
           vSeeds.push_back(CDNSSeedData("149.28.146.108", "149.28.146.108"));
         vSeeds.push_back(CDNSSeedData("149.28.229.20", "149.28.229.20"));
-        vSeeds.push_back(CDNSSeedData("108.61.149.206", "108.61.149.206"));
+      vSeeds.push_back(CDNSSeedData("108.61.149.206", "108.61.149.206"));
         vSeeds.push_back(CDNSSeedData("149.28.36.165", "149.28.36.165"));
-      //  vSeeds.push_back(CDNSSeedData("108.61.165.91", "108.61.165.91"));
-    //    vSeeds.push_back(CDNSSeedData("207.148.70.199", "207.148.70.199"));
+        vSeeds.push_back(CDNSSeedData("108.61.165.91", "108.61.165.91"));
+       vSeeds.push_back(CDNSSeedData("207.148.70.199", "207.148.70.199"));
   //      vSeeds.push_back(CDNSSeedData("198.13.57.99", "198.13.57.99"));
 //        vSeeds.push_back(CDNSSeedData("45.32.13.117", "45.32.13.117"));
+
 
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 38); // G
@@ -202,7 +218,7 @@ public:
 
         nPoolMaxTransactions = 3;
         //strSporkKey = "0459eede7626441f7802af2736cb3a4aeb3e1f95070cde39d068a4f16525ee8fdd3c075f29f9e115aeb91952239194aa6ac19765574fed8a0d7f174f2b450e9630";
-    strSporkKey = "03d1a6656a67f078d52791b51ea8e246b3b542b22ebaa15e55c0ba3453b74e01f5";
+    strSporkKey = "04388B6AB5DC15FC77A3FBBC0251B33FEEE9808BC018CC120345015DC8EAB279E9929E35BBA5E622C05EA62711B183FB39414DCDABF44A4A782219E196D984D637";
         strObfuscationPoolDummyAddress = "CaJAo1A7gPBftYSHywtBN7XRfHTWWQeJm4";
         nStartMasternodePayments = 1532051032 + 6000; //Wed, 25 Jun 2014 20:36:16 GMT
 
