@@ -1,32 +1,179 @@
-# Prerequisites
-*.d
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+# Eclipse stuff
+/.classpath
+/.project
+/.settings
 
-# Precompiled Headers
-*.gch
-*.pch
+# Mac filesystem dust
+/.DS_Store
+src/qt/.DS_Store
+contrib/.DS_Store
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+# log
+debug.log
 
-# Fortran module files
-*.mod
-*.smod
+# python
+*.pyc
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+.gitignore
+*.sublime-project
+*.sublime-workspace
+todo.txt
+reset-files.bash
 
-# Executables
+*.tar.gz
+
 *.exe
-*.out
-*.app
+src/vitae
+src/vitaed
+src/vitae-cli
+src/vitae-tx
+src/test/test_vitae
+src/qt/test/test_vitae-qt
+
+# autoreconf
+Makefile.in
+aclocal.m4
+autom4te.cache/
+build-aux/config.guess
+build-aux/config.sub
+build-aux/depcomp
+build-aux/install-sh
+build-aux/ltmain.sh
+build-aux/m4/libtool.m4
+build-aux/m4/lt~obsolete.m4
+build-aux/m4/ltoptions.m4
+build-aux/m4/ltsugar.m4
+build-aux/m4/ltversion.m4
+build-aux/missing
+build-aux/compile
+build-aux/test-driver
+config.log
+config.status
+configure
+confdefs.h
+conftest.cpp
+conftest.err
+libtool
+src/config/vitae-config.h
+src/config/vitae-config.h.in
+src/config/stamp-h1
+share/setup.nsi
+share/qt/Info.plist
+contrib/devtools/split-debug.sh
+
+src/univalue/*
+src/leveldb/build_config.mk
+
+src/qt/*.moc
+src/qt/moc_*.cpp
+src/qt/forms/ui_*.h
+
+src/qt/test/moc*.cpp
+
+.deps
+.dirstamp
+.libs
+.*.swp
+*.*~*
+*.bak
+*.rej
+*.orig
+*.pyc
+*.o
+*.o-*
+*.patch
+.vitae
+*.a
+*.pb.cc
+*.pb.h
+
+*.log
+*.trs
+*.dmg
+
+*.json.h
+*.raw.h
+
+#libtool object files
+*.lo
+*.la
+
+# Compilation and Qt preprocessor part
+*.qm
+Makefile
+greenpaycoin-qt
+greenpaycoin-Qt.app
+background.tiff*
+
+# Unit-tests
+Makefile.test
+vitae-qt_test
+src/test/buildenv.py
+
+# Resources cpp
+qrc_*.cpp
+
+# Qt creator
+*.pro.user
+
+# Mac specific
+.DS_Store
+build
+
+#lcov
+*.gcno
+/*.info
+test_vitae.coverage/
+total.coverage/
+coverage_percent.txt
+
+#build tests
+linux-coverage-build
+linux-build
+win32-build
+test/config.ini
+test/cache/*
+qa/pull-tester/run-bitcoind-for-test.sh
+qa/pull-tester/tests-config.sh
+qa/pull-tester/cache/*
+qa/pull-tester/test.*/*
+
+!src/leveldb*/Makefile
+
+.cproject
+.project
+/doc/doxygen/
+/nbproject/
+libbitcoinconsensus.pc
+.idea
+CMakeLists.txt
+cmake-build-debug
+
+greenpaycoin-qt.pro
+src/Makefile
+src/libbitcoin_server_a-rpcblockchain-94d8bc73.o.tmp
+src/config/GreenPayCoin-config.h
+src/.deps/libbitcoin_server_a-rest.Po
+src/.deps/libbitcoin_server_a-pow.Po
+src/.deps/libbitcoin_server_a-noui.Po
+src/.deps/libbitcoin_server_a-net.Po
+src/.deps/libbitcoin_server_a-miner.Po
+src/.deps/libbitcoin_server_a-merkleblock.Po
+src/.deps/libbitcoin_server_a-main.Po
+src/.deps/libbitcoin_server_a-leveldbwrapper.Po
+src/.deps/libbitcoin_server_a-init.Po
+src/.deps/libbitcoin_server_a-checkpoints.Po
+src/.deps/libbitcoin_server_a-chain.Po
+src/.deps/libbitcoin_server_a-bloom.Po
+src/.deps/libbitcoin_server_a-alert.Po
+src/.deps/libbitcoin_server_a-addrman.Po
+src/.deps/GreenPayCoind-GreenPayCoind.Po
+share/setup.nsi
+qa/pull-tester/tests-config.sh
+qa/pull-tester/run-bitcoind-for-test.sh
+Makefile
+libtool
+config.status
+config.log
+autom4te.cache/requests
